@@ -1,0 +1,42 @@
+.page-header {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 825px;
+    top: 0;
+    right: 0;
+    background-color: $basic-grey;
+    background-image: url("../img/Bike-Desktop-BG@1x.jpg");
+    background-size: contain, 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @include retina () {
+      background-image: url("../img/Bike-Desktop-BG@2x.jpg");
+    }
+  }
+}
+
+
+
+.page-header__wrapper {
+
+  @include above ($mobile-width) {
+    display: grid;
+    grid-template-columns: minmax(40px, 100px) 1fr;
+
+  }
+
+}
+
+.page-header__logo {
+  @include below ($tablet-width) {
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  @include above ($desktop-width) {
+    display: none;
+  }
+}

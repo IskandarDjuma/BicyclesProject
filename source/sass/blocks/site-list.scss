@@ -1,0 +1,42 @@
+.site-list {
+  @include above ($mobile-width) {
+    margin-top: 6.25em;
+  }
+
+  @include above ($desktop-width) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.site-list__item {
+  position: relative;
+}
+
+.site-list__link {
+  @include above ($mobile-width) {
+    @include font-size(1.25em, 1.5, 400);
+    display: block;
+    color: $basic-black100;
+    padding: 1em;
+    background-color: $basic-grey;
+    margin-bottom: 1.875em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 70%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 25px;
+      background-image: url("../img/arrow_down.svg");
+    }
+
+  }
+  @include above ($desktop-width) {
+    color: $basic-white;
+  }
+}
+
