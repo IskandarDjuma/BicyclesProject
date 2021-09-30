@@ -12,7 +12,7 @@
   <header class="page-header">
     <div class="container page-header__wrapper">
       <a class="page-header__logo">
-          <img class="logo__image" src="img/Logo.svg" width="68" height="20" alt="Логотип компании">
+          <img class="logo__image" src="img/logo.svg" width="68" height="20" alt="Логотип компании">
       </a>
       <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">
@@ -43,35 +43,38 @@
       Магазин велосипедов для всех и каждого.
     </h1>
     <section class="promo">
-      <div class="promo__bg">
-        <div class="container promo__wrapper">
+      <div class="container promo__wrapper">
+        <div class="promo__wrap">
+          <a class="promo__logo">
+            <img class="logo__image" src="img/logo.svg" width="68" height="20" alt="Логотип компании">
+          </a>
           <h2 class=" promo__headline">
             Мы продаем велосипеды
           </h2>
           <p class="promo__subtitle">
             Наш магазин отбирает только самые лучшие велосипеды для продажи
           </p>
-          <form class="promo__form form" action="https://echo.htmlacademy.ru" method="POST">
-            <ul class="form__list">
-              <h3 class="form__headline">Заполните поля ниже и&nbsp;мы&nbsp;подберем велосипед Вашей мечты</h3>
-              <li class="form__item">
-                <label class="visually-hidden" for="name">Ваше имя:</label>
-                <input class="form__input" type="text" id="name" name="user-name" placeholder="Введите Ваше Имя">
-              </li>
-              <li class="form__item">
-                <label class="visually-hidden" for="phone">Ваш телефон:</label>
-                <input class="form__input form__input--mail" type="tel" id="phone" name="user-phone" placeholder="Введите Ваш номер телефона">
-              </li>
-            </ul>
-            <button class="form__button button--primary" type="submit">Подобрать велосипед мечты</button>
-          </form>
         </div>
+        <form class="promo__form form" action="https://echo.htmlacademy.ru" method="POST">
+          <ul class="form__list">
+            <h3 class="form__headline">Заполните поля ниже и&nbsp;мы&nbsp;подберем велосипед Вашей мечты</h3>
+            <li class="form__item">
+              <label class="visually-hidden" for="name">Ваше имя:</label>
+              <input class="form__input" type="text" id="name" name="user-name" placeholder="Введите Ваше Имя" required="">
+            </li>
+            <li class="form__item">
+              <label class="visually-hidden" for="phone">Ваш телефон:</label>
+              <input class="form__input" type="tel" id="phone" name="user-phone" placeholder="Введите Ваш номер телефона" required="" pattern="(^[7|8]{0,1}\d{10}$)|(^\+7{1}\d{10}$)" minlength="10" maxlength="18">
+            </li>
+          </ul>
+          <button class="button form__button button--primary" type="submit">Подобрать велосипед мечты</button>
+        </form>
       </div>
     </section>
     <section class="about" id="about">
-      <div class="container">
+      <div class="container about__wrapper">
         <h2 class="about__headline">Несколько фактов о нас</h2>
-        <ul class="about__list">
+        <ol class="about__list">
           <li class="about__item">
             <p class="about__description">
               Самый широкий выбор велосипедов!
@@ -92,7 +95,7 @@
               Профессиональные консультации!
             </p>
           </li>
-        </ul>
+        </ol>
       </div>
     </section>
     <section class="types" id="types">
@@ -101,19 +104,19 @@
         <ul class="types__list">
           <li class="types__item">
             <a class="types__link" href="#">
-              <img src="img/bicycle_near-theWall@1x.jpg" srcset="img/bicycle_near-theWall@2x.jpg 2x" width="342" height="503" alt="Велосипед с корзиной белого цвета">
+              <img class="types__img" src="img/bicycle_near-theWall@1x.jpg" srcset="img/bicycle_near-theWall@2x.jpg 2x" width="342" height="503" alt="Велосипед с корзиной белого цвета">
               <p class="types__title">Дорожный велосипед</p>
             </a>
           </li>
           <li class="types__item">
             <a class="types__link" href="#">
-              <img src="img/Mountain bike@1x.jpg" srcset="img/Mountain bike@2x.jpg 2x" width="342" height="566" alt="Велосипед зеленного цвета на склоне горы">
+              <img class="types__img types__img--mountain" src="img/mountain bike@1x.jpg" srcset="img/mountain bike@2x.jpg 2x" width="342" height="566" alt="Велосипед зеленного цвета на склоне горы">
               <p class="types__title">Горный велосипед</p>
             </a>
           </li>
           <li class="types__item">
             <a class="types__link" href="#">
-              <img src="img/children bicycle@1x.jpg" srcset="img/children bicycle@2x.jpg 2x" width="342" height="512" alt="Розовый велосипед с корзинкой">
+              <img class="types__img" src="img/children bicycle@1x.jpg" srcset="img/children bicycle@2x.jpg 2x" width="342" height="512" alt="Розовый велосипед с корзинкой">
               <p class="types__title">Детский велосипед</p>
             </a>
           </li>
@@ -121,7 +124,7 @@
       </div>
     </section>
     <section class="video" id="video">
-      <div class="container">
+      <div class="container video__wrapper">
         <h2 class="video__headline">
           Видео про велосипеды
         </h2>
@@ -135,8 +138,8 @@
       </div>
     </section>
     </main>
-    <footer class="page__footer">
-      <section class="page__footer-contacts contacts" id="contacts">
+    <footer class="page-footer">
+      <section class="page-footer-contacts contacts" id="contacts">
         <div class="container">
           <h2 class="contacts__headline">
             Как нас найти?
@@ -145,14 +148,14 @@
             Мы&nbsp;находимся по&nbsp;адресу: Санкт-Петербург, ул. Большая Конюшенная, д.&nbsp;19
           </p>
           <div class="contacts__map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002806!2d30.320858715677204!3d59.93871916905467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x62740c0ffcd8a91f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsIDEwMSwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5MTE4Ng!5e0!3m2!1sru!2sru!4v1595446484357!5m2!1sru!2sru" style="border:0;" width="957" ;="" height="530" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002806!2d30.320858715677204!3d59.93871916905467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x62740c0ffcd8a91f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsIDEwMSwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5MTE4Ng!5e0!3m2!1sru!2sru!4v1595446484357!5m2!1sru!2sru" style="border:0;" width="957" ;="" height="530" allowfullscreen="" aria-hidden="false" tabindex="0" title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"></iframe>
           </div>
           <ul class="contacts__list">
-            <li class="contacts__item">
-              <a class="contacts__mail footer-contacts__link" href="mail: puteshestviemechta@gmail.ru ">puteshestviemechta@gmail.ru</a>
+            <li class="contacts__item contacts__item--mail">
+              <a class="contacts__link" href="mailto: puteshestviemechta@gmail.ru ">puteshestviemechta@gmail.ru</a>
             </li>
-            <li class="contacts__item">
-              <a class="contacts__phone footer-contacts__link" href="tel: +7(499)78468446 ">+7 (499) -784-684-46</a>
+            <li class="contacts__item contacts__item--phone">
+              <a class="contacts__link" href="tel: +7(499)78468446 ">+7 (499) -784-684-46</a>
             </li>
           </ul>
         </div>

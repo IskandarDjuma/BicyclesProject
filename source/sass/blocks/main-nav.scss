@@ -1,14 +1,11 @@
 .main-nav {
   position: relative;
-  width: auto;
-
-  @include above($mobile-width) {
-    min-height: 51px;
-  }
+  width: 100%;
+  min-height: 51px;
 }
 
 .main-nav--closed {
-  @include above ($mobile-width) {
+  @include below ($tablet-width) {
     .main-nav__toggle::before {
       content: "";
       position: absolute;
@@ -27,7 +24,7 @@
 }
 
 .main-nav--opened {
-  @include above ($mobile-width) {
+  @include below ($tablet-width) {
     .main-nav__toggle{
       background-color: initial;
 
@@ -59,37 +56,37 @@
 
     .main-nav__wrapper {
       position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-55%);
+      width: 100vw;
       z-index: 1;
-      min-height: 80vh;
       background-color: $basic-white;
     }
    }
-}
+  }
+
 
 .main-nav__toggle {
-  @include above ($mobile-width) {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-color: $accent-color;
-  cursor: pointer;
-  border: none;
+  display: none;
 
-  &:hover,
-  &:active {
-    background-color: fade($accent-color, 10%);
-  }
+  @include below ($tablet-width) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: $accent-color;
+    cursor: pointer;
+    border: none;
 
-  @include above ($desktop-width) {
-    display: none;
-  }
+    &:hover,
+    &:active {
+      background-color: fade($accent-color, 10%);
+    }
+
 }
 }
 

@@ -1,23 +1,18 @@
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: left;
-  padding: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 0;
-  background-color: $transparent;
+  @include button-reset;
 
   &--primary {
-    @include font-size (10px, 12px, 400);
+    @include font-size (15px, 21px, 600);
     background-color: $accent-color;
-    padding: 19px 45px;
-    text-align: center;
-    color: $basic-white;
+    padding: 0.875em 1.875em;
+    color: $basic-black;
+    border-radius: 6px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
-      background-color: $basic-dark;
+      background-color: fade($accent-color, 10);
     }
 
     &:focus {
@@ -25,7 +20,7 @@
     }
 
     @include above ($tablet-width) {
-      @include font-size (12px, 15px, 500);
+
     }
   }
 }

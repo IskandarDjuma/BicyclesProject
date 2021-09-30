@@ -1,0 +1,90 @@
+.contacts {
+  padding-bottom: 50px;
+}
+
+.contacts__headline {
+  @include font-size (1.875em, 1.875em, 600);
+  color: $basic-dark;
+  text-align: center;
+  margin: 0;
+  margin-bottom: clamp(10px, 5vh, 30px);
+
+  @include below ($tablet-width) {
+    @include font-size (1.5em, 1.7, 600);
+  }
+}
+
+.contacts__description {
+  @include font-size (1.06em, 1.823em, 400);
+  color: $primary-text-color;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 2.35em;
+  width: 555px;
+
+  @include below ($tablet-width) {
+   width: 100%;
+  }
+}
+
+.contacts__map {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.contacts__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contacts__item {
+  position: relative;
+  padding-left: 20px;
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0%;
+    transform: translateX(-50%);
+  }
+
+  &--mail::before{
+    width: 26px;
+    height: 20px;
+    background-image: url("../img/mail_icon.svg");
+    background-repeat: no-repeat;
+  }
+
+  &--phone::before {
+    width: 22px;
+    height: 26px;
+    background-image: url("../img/icon_phone.svg");
+    background-repeat: no-repeat;
+  }
+
+  @include below ($mobile-width) {
+    margin-bottom: 20px;
+   }
+}
+
+.contacts__link {
+  @include font-size (1em, 1.31, 400);
+  color: $basic-black-50;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+}

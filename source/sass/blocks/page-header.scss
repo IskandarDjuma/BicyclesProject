@@ -1,42 +1,59 @@
 .page-header {
+  z-index: -1;
+  margin-bottom: 300px;
+
+  @include below ($tablet-width) {
+    margin-bottom: clamp(30px, 20vw, 130px);
+  }
+
   &::before {
     content: "";
     position: absolute;
     width: 100%;
-    height: 825px;
+    min-height: 100vh;
     top: 0;
     right: 0;
-    background-color: $basic-grey;
-    background-image: url("../img/Bike-Desktop-BG@1x.jpg");
-    background-size: contain, 100%;
+    background-image: url("../img/bike-desktop-bg@1x.jpg");
+    background-size: cover, 100%;
     background-repeat: no-repeat;
+    background-position: top center;
     z-index: -1;
 
-    @include retina () {
-      background-image: url("../img/Bike-Desktop-BG@2x.jpg");
+    @include below ($tablet-width) {
+      min-width: 320px;
+      min-height: 50vh;
     }
   }
-}
 
+  @include retina () {
+    background-image: url("../img/bike-desktop-bg@2x.jpg");
+  }
+}
 
 
 .page-header__wrapper {
+  padding-top: 1em;
+  border-bottom: 1px solid grey;
+  max-width: 980px;
+  padding-right: 25px;
+  padding-left: 25px;
 
-  @include above ($mobile-width) {
+  @include below ($tablet-width) {
+    max-width: 100%;
     display: grid;
     grid-template-columns: minmax(40px, 100px) 1fr;
+    border-bottom: none;
+    padding: 0;
 
   }
-
 }
 
 .page-header__logo {
+  display: none;
+
   @include below ($tablet-width) {
+    display: block;
     text-align: center;
     padding-top: 1em;
-  }
-
-  @include above ($desktop-width) {
-    display: none;
   }
 }
