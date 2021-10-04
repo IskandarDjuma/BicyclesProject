@@ -4,6 +4,32 @@
   @include below($tablet-width) {
     margin-bottom: 70px;
   }
+
+  h2 {
+    @include font-size (2.875em, 1.39, 700);
+    color: $basic-white;
+    margin: 0;
+    margin-bottom: 0.52em;
+
+    @include below ($tablet-width) {
+      @include font-size (1.875em, 1.39, 700);
+      text-align: center;
+    }
+  }
+
+  p {
+    @include font-size (1.25em, 1.6, 300);
+    color: $basic-white;
+    opacity: 0.8;
+    margin: 0;
+
+    @include below ($tablet-width) {
+      @include font-size (1.125em, 1.6, 300);
+      text-align: center;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
 }
 
 .promo__wrapper {
@@ -27,31 +53,6 @@
   }
 }
 
-.promo__headline {
-  @include font-size (2.875em, 1.39, 700);
-  color: $basic-white;
-  margin: 0;
-  margin-bottom: 0.52em;
-
-  @include below ($tablet-width) {
-    @include font-size (1.875em, 1.39, 700);
-    text-align: center;
-  }
-}
-
-.promo__subtitle {
-  @include font-size (1.25em, 1.6, 300);
-  color: $basic-white;
-  opacity: 0.8;
-  margin: 0;
-
-  @include below ($tablet-width) {
-    @include font-size (1.125em, 1.6, 300);
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
-  }
-}
 
 .promo__logo {
   @include below ($tablet-width) {

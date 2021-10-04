@@ -2,29 +2,29 @@
   background-color: $basic-black-bg;
   max-height: 706px;
   margin-bottom: 250px;
-}
 
-.video__headline {
-  @include font-size (1.875em, 1.875em, 600);
-  color: $basic-white;
-  margin: 0;
-  text-align: center;
-  padding-top: 120px;
-  padding-bottom: 20px;
+  h2 {
+    @include font-size (1.875em, 1.875em, 600);
+    color: $basic-white;
+    margin: 0;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 20px;
 
-  @include below ($tablet-width) {
-    @include font-size (1.5em, 1.7, 600);
+    @include below ($tablet-width) {
+      @include font-size (1.5em, 1.7, 600);
+    }
   }
-}
 
-.video__subtitle {
-  @include font-size (1em, 1.75em, 300);
-  width: 340px;
-  color: $basic-white;
-  opacity: 0.7;
-  text-align: center;
-  margin: 0 auto;
-  padding-bottom: 56px;
+  p {
+    @include font-size (1em, 1.75em, 300);
+    width: 340px;
+    color: $basic-white;
+    opacity: 0.7;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 56px;
+  }
 }
 
 .video__content-wrapper {
@@ -44,7 +44,7 @@
   background-repeat: no-repeat;
 }
 
-.video__play-button{
+.video__play-button {
   position: absolute;
   left: 50%;
   top: 50%;

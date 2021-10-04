@@ -30,7 +30,6 @@
   }
 }
 
-
 .page-header__wrapper {
   padding-top: 1em;
   border-bottom: 1px solid grey;
@@ -39,9 +38,9 @@
   padding-left: 25px;
 
   @include below ($tablet-width) {
-    max-width: 100%;
     display: grid;
     grid-template-columns: minmax(40px, 100px) 1fr;
+    width: auto;
     border-bottom: none;
     padding: 0;
 

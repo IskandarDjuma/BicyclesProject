@@ -1,16 +1,16 @@
 .types {
   margin-bottom: 140px;
-}
 
-.types__headline {
-  @include font-size (1.875em, 1.875em, 600);
-  color: $basic-dark;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 60px;
+  h2 {
+    @include font-size (1.875em, 1.875em, 600);
+    color: $basic-dark;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 60px;
 
-  @include below ($tablet-width) {
-    @include font-size (1.5em, 1.7, 600);
+    @include below ($tablet-width) {
+      @include font-size (1.5em, 1.7, 600);
+    }
   }
 }
 
@@ -34,6 +34,7 @@
     margin-right: 0;
 
   }
+
   &:nth-child(2n) {
     margin-top: 20px;
 
@@ -107,35 +108,34 @@
       margin-top: 0;
     }
   }
-}
 
-.types__img {
-  border-radius: 0.625em;
-  margin-bottom: 1.25em;
+  img {
+    border-radius: 0.625em;
+    margin-bottom: 1.25em;
 
-  &:hover {
-    filter: grayscale(80%);
+    &:hover {
+      filter: grayscale(80%);
+    }
+
+    @include below ($tablet-width) {
+      width: 270px;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 
- @include below ($tablet-width) {
-    width: 270px;
-    height: 300px;
-    object-fit: cover;
-  }
-}
+  p {
+    @include font-size (1.375em, 1.54, 600);
+    margin: 0;
+    color: $basic-black;
+    margin: 0 auto;
+    max-width: 270px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
-.types__title {
-  @include font-size (1.375em, 1.54, 600);
-  margin: 0;
-  color: $basic-black;
-  margin: 0 auto;
-  max-width: 270px ;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-
-  @include below ($tablet-width) {
-    padding-left: 10px;
+    @include below ($tablet-width) {
+      padding-left: 10px;
+    }
   }
 }

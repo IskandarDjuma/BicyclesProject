@@ -1,29 +1,29 @@
 .contacts {
   padding-bottom: 50px;
-}
 
-.contacts__headline {
-  @include font-size (1.875em, 1.875em, 600);
-  color: $basic-dark;
-  text-align: center;
-  margin: 0;
-  margin-bottom: clamp(10px, 5vh, 30px);
+  h2 {
+    @include font-size (1.875em, 1.875em, 600);
+    color: $basic-dark;
+    text-align: center;
+    margin: 0;
+    margin-bottom: clamp(10px, 5vh, 30px);
 
-  @include below ($tablet-width) {
-    @include font-size (1.5em, 1.7, 600);
+    @include below ($tablet-width) {
+      @include font-size (1.5em, 1.7, 600);
+    }
   }
-}
 
-.contacts__description {
-  @include font-size (1.06em, 1.823em, 400);
-  color: $primary-text-color;
-  text-align: center;
-  margin: 0 auto;
-  padding-bottom: 2.35em;
-  width: 555px;
+  p {
+    @include font-size (1.06em, 1.823em, 400);
+    color: $primary-text-color;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 2.35em;
+    width: 555px;
 
-  @include below ($tablet-width) {
-   width: 100%;
+    @include below ($tablet-width) {
+      width: 100%;
+    }
   }
 }
 
@@ -57,7 +57,7 @@
     transform: translateX(-50%);
   }
 
-  &--mail::before{
+  &--mail::before {
     width: 26px;
     height: 20px;
     background-image: url("../img/mail_icon.svg");
@@ -73,18 +73,18 @@
 
   @include below ($mobile-width) {
     margin-bottom: 20px;
-   }
-}
-
-.contacts__link {
-  @include font-size (1em, 1.31, 400);
-  color: $basic-black-50;
-
-  &:hover {
-    color: $accent-color;
   }
 
-  &:focus {
-    opacity: 0.8;
+  a {
+    @include font-size (1em, 1.31, 400);
+    color: $basic-black-50;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:focus {
+      opacity: 0.8;
+    }
   }
 }
