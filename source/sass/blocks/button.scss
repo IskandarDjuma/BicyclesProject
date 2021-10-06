@@ -4,7 +4,7 @@
   &--primary {
     @include font-size (15px, 21px, 600);
     background-color: $accent-color;
-    padding: 0.875em 1.875em;
+    padding: 0.88em 1.88em;
     color: $basic-black;
     border-radius: 6px;
     width: 100%;
@@ -17,10 +17,6 @@
 
     &:focus {
       color: rgba($basic-white, 0.3);
-    }
-
-    @include above ($tablet-width) {
-
     }
   }
 }

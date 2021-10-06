@@ -4,7 +4,7 @@
   margin-bottom: 250px;
 
   h2 {
-    @include font-size (1.875em, 1.875em, 600);
+    @include font-size (1.88em, 1.88em, 600);
     color: $basic-white;
     margin: 0;
     text-align: center;
@@ -36,7 +36,7 @@
 
 .video__content {
   display: block;
-  width: 929px;
+  min-width: 929px;
   height: 522px;
   background-color: $basic-grey;
   background-image: url("../img/videoimg-desktop@1x.jpg");
@@ -59,7 +59,7 @@
 
   &:hover {
     transform: translate(-50%, -50%) scale(1.2);
-    transition: all .1s ease;
+    transition: all 0.1s ease;
   }
 
   &:active {

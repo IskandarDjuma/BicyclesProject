@@ -32,7 +32,7 @@
 
 .page-header__wrapper {
   padding-top: 1em;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $basic-grey;
   max-width: 980px;
   padding-right: 25px;
   padding-left: 25px;
@@ -43,7 +43,6 @@
     width: auto;
     border-bottom: none;
     padding: 0;
-
   }
 }
 

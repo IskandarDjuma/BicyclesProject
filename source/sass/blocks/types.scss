@@ -2,7 +2,7 @@
   margin-bottom: 140px;
 
   h2 {
-    @include font-size (1.875em, 1.875em, 600);
+    @include font-size (1.88em, 1.88em, 600);
     color: $basic-dark;
     text-align: center;
     margin: 0;
@@ -32,11 +32,11 @@
 
   &:last-child {
     margin-right: 0;
-
   }
 
   &:nth-child(2n) {
     margin-top: 20px;
+    margin-bottom: 25px;
 
     &::before,
     &::after {
@@ -46,10 +46,6 @@
       height: 47px;
       background-image: url("../img/decor_rectangle.svg");
       background-repeat: no-repeat;
-
-      @include below ($tablet-width) {
-        display: none;
-      }
     }
 
     &::before {
@@ -105,12 +101,17 @@
     margin-bottom: 40px;
 
     &:nth-child(2n) {
-      margin-top: 0;
+      margin: 0;
+    }
+
+    &:nth-child(2n)::before,
+    &:nth-child(2n)::after {
+      display: none;
     }
   }
 
   img {
-    border-radius: 0.625em;
+    border-radius: 0.63em;
     margin-bottom: 1.25em;
 
     &:hover {
@@ -125,8 +126,7 @@
   }
 
   p {
-    @include font-size (1.375em, 1.54, 600);
-    margin: 0;
+    @include font-size (1.38em, 1.54, 600);
     color: $basic-black;
     margin: 0 auto;
     max-width: 270px;

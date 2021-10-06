@@ -25,46 +25,47 @@
 
 .main-nav--opened {
   @include below ($tablet-width) {
-    .main-nav__toggle {
-      background-color: initial;
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 25px;
-        left: 15px;
-        width: 22px;
-        height: 1px;
-        background-color: $basic-black-20;
-      }
-
-      &::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-
-      &:active::before,
-      &:active::after {
-        background-color: fade($basic-black-20, 30%);
-      }
+    .main-nav__toggle::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 15px;
+      width: 22px;
+      height: 1px;
+      background-color: $basic-black-20;
+      transform: rotate(45deg);
+      box-shadow: none;
     }
 
-    .main-nav__wrapper {
+    .main-nav__toggle::after {
+      content: "";
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      z-index: 1;
-      background-color: $basic-white;
+      top: 25px;
+      left: 15px;
+      width: 22px;
+      height: 1px;
+      background-color: $basic-black-20;
+      transform: rotate(-45deg);
+      box-shadow: none;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: fade($basic-black-20, 30%);
     }
   }
-}
 
+  .main-nav__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    background-color: $basic-white;
+    transition: transform ease-in-out 0.3s;
+  }
+}
 
 .main-nav__toggle {
   display: none;
@@ -75,7 +76,6 @@
     top: 0;
     right: 0;
     z-index: 2;
-    display: block;
     width: 50px;
     height: 50px;
     background-color: $accent-color;
@@ -86,23 +86,32 @@
     &:active {
       background-color: fade($accent-color, 10%);
     }
-
   }
 }
 
 .main-nav--nojs {
-  .main-nav__toggle {
-    display: none;
+  @include below ($tablet-width) {
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-nav__wrapper {
+      display: inherit;
+      background-color: $basic-white;
+    }
+
+    .main-nav__list {
+      margin-top: 0;
+      flex-direction: row;
+    }
   }
 
-  .main-nav__wrapper {
-    display: block;
-    @include below ($tablet-width) {
-      background-color: $basic-white;
+  @include below ($mobile-width) {
+    .main-nav__wrapper {
+      position: absolute;
     }
   }
 }
-
 
 .main-nav__list {
   @include list-reset;
