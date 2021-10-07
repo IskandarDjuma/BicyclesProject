@@ -107,9 +107,7 @@
   }
 
   @include below ($mobile-width) {
-    .main-nav__wrapper {
-      position: absolute;
-    }
+
   }
 }
 
