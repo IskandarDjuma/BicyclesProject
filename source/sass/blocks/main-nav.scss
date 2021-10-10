@@ -96,18 +96,13 @@
     }
 
     .main-nav__wrapper {
-      display: inherit;
+      display: block;
       background-color: $basic-white;
     }
 
-    .main-nav__list {
+    .site-list {
       margin-top: 0;
-      flex-direction: row;
     }
-  }
-
-  @include below ($mobile-width) {
-
   }
 }
 

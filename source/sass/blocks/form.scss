@@ -22,20 +22,60 @@
 }
 
 .form__item {
+  position: relative;
   margin-bottom: 1.25em;
 
-  input {
+  input[type="text"],
+  input[type="tel"] {
     padding: 0.88em 1.88em;
     color: $basic-black200;
-    background-color: $basic-white;
+    background-color: $basic-grey100;
     border: 1px solid $basic-grey100;
     border-radius: 6px;
     width: 100%;
     transition: all 0.25s;
 
-    &::placeholder {
-      color: $basic-black200;
-      opacity: 0.5;
+    &:focus + label {
+      opacity: 0;
     }
+
+    &:valid {
+      border: 2px solid $accent-color;
+      background-color: $basic-white;
+    }
+
+    &:valid + label {
+      opacity: 0;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      border: 2px solid $invalid-color;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) + label {
+      opacity: 0;
+    }
+
+    &:invalid:focus:not(:placeholder-shown) ~ .form__requirements {
+      max-height: 200px;
+      padding: 10px 30px;
+    }
+  }
+
+  .form__requirements {
+    @include font-size (0.94em, 1.6em, 400);
+    padding: 0 30px 0 50px;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: $invalid-color;
+  }
+
+  label {
+    @include font-size (0.94em, 1.6em, 400);
+    opacity: 0.5;
+    position: absolute;
+    top: 10px;
+    left: 30px;
   }
 }

@@ -57,4 +57,10 @@
       background-image: url("../img/arrow-down.svg");
     }
   }
+
+  @include below ($mobile-width) {
+    &::before {
+      left: 90%;
+    }
+  }
 }

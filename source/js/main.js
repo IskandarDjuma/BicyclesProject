@@ -1,6 +1,8 @@
+'use strict';
+
 (function () {
-  const navMain = document.querySelector('.main-nav');
-  const navToggle = document.querySelector('.main-nav__toggle');
+  var navMain = document.querySelector('.main-nav');
+  var navToggle = document.querySelector('.main-nav__toggle');
 
   navMain.classList.remove('main-nav--nojs');
 
@@ -13,22 +15,4 @@
       navMain.classList.remove('main-nav--opened');
     }
   });
-
-  const adForm = document.querySelector('.form');
-  const phone = adForm.querySelector('#phone');
-
-  const checkPhoneValidity = (evt) => {
-    if (evt.target.validity.patternMismatch) {
-      evt.target.setCustomValidity('Добавьте телефон в формате +7 123 456 78 90');
-    } else if (evt.target.validity.valueMissing) {
-      evt.target.setCustomValidity('Обязательное поле');
-    } else {
-      evt.target.setCustomValidity('');
-    }
-    evt.target.reportValidity();
-  };
-
-  phone.addEventListener('change', checkPhoneValidity);
-
-
 })();

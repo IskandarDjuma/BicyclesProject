@@ -1,8 +1,30 @@
 .promo {
-  margin-bottom: 390px;
+  @include below ($tablet-width) {
+    height: 85vh;
+    margin-bottom: 50px;
+  }
 
-  @include below($tablet-width) {
-    margin-bottom: 70px;
+  .promo__bg {
+    margin-bottom: 150px;
+    background-color: $basic-black;
+    background-image: url("../img/bike-desktop-bg@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% -9px;
+    background-size: cover, 100%;
+    width: 100%;
+    height: 825px;
+
+    @include retina () {
+      background-image: url("../img/bike-desktop-bg@2x.jpg");
+    }
+
+    @include below ($tablet-width) {
+      margin-bottom: clamp(30px, 20vw, 130px);
+      height: 340px;
+      background-position: 50% 0;
+      background-size: cover;
+      background-color: $basic-white;
+    }
   }
 
   h2 {
@@ -39,17 +61,19 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 160px;
+  padding-top: 230px;
 
   @include below($tablet-width) {
     max-width: 100%;
     grid-template-columns: 1fr;
     gap: 0;
+    padding-top: clamp(50px, 20vw, 130px);
   }
 }
 
 .promo__wrap {
   @include below($tablet-width) {
-    margin-bottom: 150px;
+    margin-bottom: clamp(120px, 20vw, 130px);
   }
 }
 

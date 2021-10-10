@@ -1,33 +1,6 @@
 .page-header {
   z-index: -1;
-  margin-bottom: 300px;
-
-  @include below ($tablet-width) {
-    margin-bottom: clamp(30px, 20vw, 130px);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    right: 0;
-    background-image: url("../img/bike-desktop-bg@1x.jpg");
-    background-size: cover, 100%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    z-index: -1;
-
-    @include below ($tablet-width) {
-      min-width: 320px;
-      min-height: 50vh;
-    }
-  }
-
-  @include retina () {
-    background-image: url("../img/bike-desktop-bg@2x.jpg");
-  }
+  background-color: #171717;
 }
 
 .page-header__wrapper {
